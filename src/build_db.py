@@ -55,7 +55,9 @@ if __name__ == "__main__":
     #       the queries will fail if the datasets (`dim`, `raw_data`, `metrics`, `towers`) do not exist!
     GEN_QUERIES = [
         "long_gen.sql",
+        "long_clean_gen.sql",
         "timestamp_spine_gen.sql",
+        "tower_D_concat.sql",
         "metrics_schema_gen.sql",
         "tower_schema_gen.sql",
     ]
