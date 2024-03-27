@@ -1,0 +1,28 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+jupyterlab = "*"
+pandas = "*"
+pandas_gbq = "*"
+google-cloud-bigquery = "*"
+numpy = "*"
+scikit-learn = "*"
+python-dotenv = "*"
+ydata-profiling = "*"
+jupyter-contrib-nbextensions = "*"
+google-cloud-bigquery-storage = "*"
+pyarrow = "*"
+google-cloud-storage = "*"
+crcmod = "*"
+gsutil = "*"
+matplotlib = "*"
+bokeh = "*"
+seaborn = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.12"

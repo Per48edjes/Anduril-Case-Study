@@ -1,0 +1,11 @@
+artifacts/
+profiles/
+logs/
+**/.ipynb_checkpoints/
+
+
+Pipfile.lock
+.env
+bq_service_account_key.json
+
+.DS_Store
