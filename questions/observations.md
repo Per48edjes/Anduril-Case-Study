@@ -31,7 +31,7 @@ This is (rough and incomplete) sketch of some ideas, questions, thoughts, etc. f
     - Not entirely sure what the typical power consumption profile of a tower is, but there is not an identifiable pattern across the four towers!
 - Interesting to see decently strong positive correlation (c. 0.6 R-sq) between power and camera sensor temperatures
 
-# Satellite Backhaul Communications
+### Satellite Backhaul Communications
 
 - Satellite metrics have very sparse data (none from Towers C, D; virtually nothing from A and only about quarter of interval periods reporting for B).
 

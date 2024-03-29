@@ -9,3 +9,5 @@ This repo houses the analysis supporting the Anduril case study.
 ---
 
 ## Data Profiling
+
+See [here](https://storage.googleapis.com/anduril-case-study/index.html) for the profiling produced by the profiling pipeline (see `src/profiling.py`).
