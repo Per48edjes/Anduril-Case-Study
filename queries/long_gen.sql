@@ -1,11 +1,9 @@
 create or replace table raw_data.long as (
   select * from `raw_data.tower_A`
-  union all
+  union distinct
   select * from `raw_data.tower_B`
-  union all
+  union distinct
   select * from `raw_data.tower_C`
-  union all
+  union distinct
   select * from `raw_data.tower_D`
-  union all
-  select * from `raw_data.tower_D_bonus`
 );

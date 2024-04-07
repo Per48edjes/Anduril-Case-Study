@@ -1,5 +1,5 @@
 create or replace table raw_data.long_clean as (
-select
+select distinct
   timestamp_ms,
   timestamp_millis(cast(timestamp_ms as int64)) as ts,
   replace(tower_id, '-', '_') as tower_id,

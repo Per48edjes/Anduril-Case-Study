@@ -17,7 +17,9 @@ Any insight around this (especially vis-a-vis the panel presentation) would be m
     - e.g., anything notable about this period in particular,
     - etc.
 
-- Are patterns of nullity (missing data) simply a consequence of this being a take-home assignment or actual reporting from real towers over the reporting period?
+- Do we expect reporting cadence for tower-metric pairs to be similar or do some towers report some metrics at varying frequencies?
+
+- Are patterns of [nullity](https://lookerstudio.google.com/s/i0CJkONr1kE) (missing data) simply a consequence of this being a take-home assignment or actual reporting from real towers over the reporting period?
     - e.g., only Tower D has "bonus" metrics,
     - e.g., towers B, C, D have missing data for about three-quarters of the 30 second measurement intervals in the same places,
     - e.g., towers C, D not reporting any satellite info,
@@ -46,3 +48,4 @@ tower-D.csv:0
 - I suspect `pan_tilt_unit_*` metrics describe controlling the pan/tilt of some camera(s?) in the tower, but what are `radar_detections_count`, `track_count` and are the bonus metrics themselves conceptually related?
     - How does `radar_detections` compare to the radio frequency detection metrics, conceptually (what are they measuring)?
     - What are the radio frequencies being detected (and to what end)?
+    - How is time measured for the "speed" metrics?

@@ -21,6 +21,7 @@ gsutil = "*"
 matplotlib = "*"
 bokeh = "*"
 seaborn = "*"
+ipywidgets = "*"
 
 [dev-packages]
 

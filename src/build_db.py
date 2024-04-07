@@ -54,10 +54,10 @@ if __name__ == "__main__":
     # WARN: BigQuery datasets must be created before running these queries;
     #       the queries will fail if the datasets (`dim`, `raw_data`, `metrics`, `towers`) do not exist!
     GEN_QUERIES = [
+        "tower_D_concat.sql",
         "long_gen.sql",
         "long_clean_gen.sql",
         "timestamp_spine_gen.sql",
-        "tower_D_concat.sql",
         "metrics_schema_gen.sql",
         "tower_schema_gen.sql",
     ]

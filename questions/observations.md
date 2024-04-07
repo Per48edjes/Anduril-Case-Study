@@ -2,7 +2,11 @@
 
 This is (rough and incomplete) sketch of some ideas, questions, thoughts, etc. from working with the data.
 
-**Note**: This is still very much a work in progress!
+## General
+
+For the time series data, I've upsampled everything to 30-second intervals over the reporting period 2024-01-18 04:48:30 UTC → 2024-02-17 20:57:30 UTC. The general idea is the upsampling provides the highest degree of granularity for analysis.
+
+However, it is not clear whether the expectation is that every tower-metric pair should be reporting on this basis, as this choice of interval is inferred from the data set provided.
 
 ## Metrics
 
@@ -15,11 +19,17 @@ This is (rough and incomplete) sketch of some ideas, questions, thoughts, etc. f
 
 ### LTE Communications
 
--
+- Curious about the spike in LTE signal-to-noise for tower D on February 12th; seems to be driven by component metrics.
+     - `lte_signal_received_power`, `lte_signal_received_quality` also spikes at that time.
+     - Seemingly, an improvement based on my nominal understanding of these measures.
 
 ### Computer System Performance
 
-- 
+- `message_publish_subscribe_latency_ms` not included in the provided data
+- Is system uptime measured in *decaseconds* (i.e., 1 decasecond = 10 seconds)? Seems that way for the cycle times to corroborate with timestamps in peak-to-peak comparisons.
+- In general, it seems like `system_uptime` is around 18 days, but there are few hiccups (of significantly) shorter cycle times (as measured by peak-to-peak comparisons).
+    - Curious why there might be these anomalies -- a monotonic clock should always count up when it's reset.
+    - Is the uptime calculated from a wall clock that might be subject to stepping? (That wouldn't make very much sense!)
 
 ### Tower Power
 
@@ -34,30 +44,27 @@ This is (rough and incomplete) sketch of some ideas, questions, thoughts, etc. f
 ### Satellite Backhaul Communications
 
 - Satellite metrics have very sparse data (none from Towers C, D; virtually nothing from A and only about quarter of interval periods reporting for B).
+- Could be due to varying functionality across towers?
 
 ### Radio Frequency Detection
 
 - Dearth of data for `radio_frequency_detection_count` (tower A missing entirely, B & C mising >99%)
 - Dearth of data for `radio_frequency_precise_location_detection_count` (<1% coverage, and only for towers B, C)
+- Makes me question these towers are uniform (or not) in their functionality.
 
 ### Computer Vision Pipeline
 
-- TBD
+- Tower D showing 2-3x `computer_vision_tracking_latency_ms` from c. February 5th until February 13th
 
+### Camera Health
 
-###  Camera Health
+- Tower B's `camera_drifting_pixels` has some massive outliers relative to Tower A's.
+- `camera_seconds_since_nuc` is a strange metric, as there are some significant outliers across all towers.
+    - I *think* this is reporting the time (in seconds) between **non-uniformity correction** (NUC) of one (or more?) infrared camera(s).
+- Strong correlations between:
+    - Tower A: `camera_drifting_pixels` vs. `camera_fpa_temperature` (R-sq 0.63)
+    - Tower B: `camera_drifting_pixels` vs. `camera_fpa_temperature` (R-sq 0.41)
 
-- TBD
+### Track Creation
 
-
-## Towers 
-
-### Tower A
-
-
-### Tower D
-
-- Something wonky is happening near end of reporting period with Tower D.
-  - Look at the crazy pan tilt speed values (it broke the profiling pipeline!)
-  - System uptime not as regular as Tower A or B.
-  - LTE signal-to-noise ratio spikes like crazy near end of period.
+- Massive outliers; unsure how these are related to one another. 
